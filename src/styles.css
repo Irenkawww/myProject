@@ -23,7 +23,11 @@ li {
     line-height: 1;
     list-style: none;
 }
-
+#gitHubLink {
+    display: block;
+    margin: auto;
+    text-align: center;
+}
 .weather-app {
     border: 1px solid #dadde1;
     padding: 15px;
