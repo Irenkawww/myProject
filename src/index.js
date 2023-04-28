@@ -68,6 +68,12 @@ function showFahrenheit(event) {
   currentTempFahrenheit.innerHTML = Math.round((tempCelcius * 9/5) + 32);
 }
 
+function showCelcius(event) {
+  event.preventDefault();
+  let currentTempCelcius = document.querySelector("#currentTemprature");
+  currentTempCelcius.innerHTML = Math.round(tempCelcius);
+}
+
 let tempCelcius = null;
 
 let currentButton = document.querySelector("#currentButton");
@@ -79,4 +85,6 @@ searchButton.addEventListener("click", getCity);
 let fahrenheit = document.querySelector("#fahrenheit");
 fahrenheit.addEventListener("click", showFahrenheit);
 
+let celcius = document.querySelector("#celsius");
+celcius.addEventListener("click", showCelcius);
 
