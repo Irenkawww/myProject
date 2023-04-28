@@ -36,6 +36,12 @@ function showWeather(response) {
   let currentTempCelcius = document.querySelector("#currentTemprature");
   let tempCelcius = Math.round(response.data.main.temp);
   currentTempCelcius.innerHTML = `${tempCelcius}`;
+  let explanation = document.querySelector("#explanation");
+  explanation.innerHTML= response.data.weather[0].description;
+  let humidity = document.querySelector("#humidity");
+  humidity.innerHTML = response.data.main.humidity;
+  let wind = document.querySelector("#wind");
+  wind.innerHTML = Math.round(response.data.wind.speed);
   }
 function getPosition(position) {
   let apiKey = "a0acd12f3ad56ebd573681d3c485d476";
