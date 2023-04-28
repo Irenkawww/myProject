@@ -64,12 +64,16 @@ function getCity(event) {
  }
 function showFahrenheit(event) {
   event.preventDefault();
+  fahrenheit.classList.add("active");
+  celcius.classList.remove("active");
   let currentTempFahrenheit = document.querySelector("#currentTemprature");
   currentTempFahrenheit.innerHTML = Math.round((tempCelcius * 9/5) + 32);
 }
 
 function showCelcius(event) {
   event.preventDefault();
+  fahrenheit.classList.remove("active");
+  celcius.classList.add("active");
   let currentTempCelcius = document.querySelector("#currentTemprature");
   currentTempCelcius.innerHTML = Math.round(tempCelcius);
 }

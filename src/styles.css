@@ -57,3 +57,10 @@ li {
     max-width: 600px;
 }
 
+.clearfix .active {
+color: black;
+cursor: default;
+}
+.clearfix .active:hover {
+    text-decoration: none;
+}
