@@ -31,10 +31,10 @@ if (min > 9) {
 currentTime.innerHTML = hour + ":" + min;
 
 function showWeather(response) {
+  tempCelcius = Math.round(response.data.main.temp);
   let h1 = document.querySelector("h1");
   h1.innerHTML = `${response.data.name}`;
   let currentTempCelcius = document.querySelector("#currentTemprature");
-  let tempCelcius = Math.round(response.data.main.temp);
   currentTempCelcius.innerHTML = `${tempCelcius}`;
   let explanation = document.querySelector("#explanation");
   explanation.innerHTML= response.data.weather[0].description;
@@ -54,9 +54,6 @@ function getPosition(position) {
 function geolocation(){
 navigator.geolocation.getCurrentPosition(getPosition)
 }
-let currentButton = document.querySelector("#currentButton");
-currentButton.addEventListener("click", geolocation);
-
 function getCity(event) {
   event.preventDefault();
   let cityInput = document.querySelector("#cityInput");
@@ -65,6 +62,21 @@ function getCity(event) {
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(url).then(showWeather);
  }
+function showFahrenheit(event) {
+  event.preventDefault();
+  let currentTempFahrenheit = document.querySelector("#currentTemprature");
+  currentTempFahrenheit.innerHTML = Math.round((tempCelcius * 9/5) + 32);
+}
+
+let tempCelcius = null;
+
+let currentButton = document.querySelector("#currentButton");
+currentButton.addEventListener("click", geolocation);
+
 let searchButton = document.querySelector("#searchButton");
 searchButton.addEventListener("click", getCity);
+
+let fahrenheit = document.querySelector("#fahrenheit");
+fahrenheit.addEventListener("click", showFahrenheit);
+
 
