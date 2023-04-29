@@ -32,9 +32,10 @@ li {
 }
 
 .weather-icon {
-    height: 64px;
-    width: 64px;
+    height: 110px;
+    width: 128px;
     margin-right: 10px;
+    border-radius: 20px;
 }
 
 .temperature {
