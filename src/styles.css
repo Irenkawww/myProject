@@ -24,11 +24,14 @@ li {
     line-height: 1;
     list-style: none;
 }
-
+.btn{
+    font-size: xx-small;
+}
 .weather-app {
     border: 1px solid #dadde1;
     padding: 15px;
     border-radius: 10px;
+    padding-bottom: 0px;
 }
 
 .weather-icon {
@@ -64,4 +67,19 @@ cursor: default;
 }
 .clearfix .active:hover {
     text-decoration: none;
+}
+.daysWeather{
+    text-align: center;
+    margin: 15px;
+    color: #7c7c7c;
+}
+.min {
+    font-size: 13px;
+    opacity: 0.5;
+    color: #090909;
+}
+.max {
+font-size: 14px;
+color: #090909;
+opacity: 0.7;
 }
