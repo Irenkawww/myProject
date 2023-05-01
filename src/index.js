@@ -30,6 +30,23 @@ if (min > 9) {
 }
 currentTime.innerHTML = hour + ":" + min;
 
+function showDaysWeather () {
+  let daysWeather = document.querySelector("#daysWeather");
+  let forecastHTML=`<div class="row">`;
+let days = ["Mon", "Tue", "Wed", "Thu","Fri", "Sat"];
+days.forEach(function (day) {
+forecastHTML = forecastHTML + `
+              <div class="col-2">
+                ${day}
+                <img src="media/weather_1.jpg" alt="weatherIcon" width="64" />
+                <span class="max"> 10° </span> <span class="min"> 2° </span>
+              </div>
+               `;
+})
+  forecastHTML = forecastHTML + `</div>`;
+  daysWeather.innerHTML = forecastHTML;
+}
+showDaysWeather();
 function showWeather(response) {
   tempCelcius = Math.round(response.data.main.temp);
   let h1 = document.querySelector("h1");
