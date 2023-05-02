@@ -56,6 +56,21 @@ li {
 .search-form {
     margin-bottom: 20px;
 }
+.btn-success {
+    color: #070101;
+    background-color: #ffd21d;
+    border-color: #ffd21d;
+}
+.btn-success:hover {
+    color: #fff;
+    background-color: #1930e0;
+    border-color: #1930e0;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: #1930e0;
+    border-color: #1930e0;
+}
 .gitHubLink {
     margin: 20px auto;
     max-width: 600px;

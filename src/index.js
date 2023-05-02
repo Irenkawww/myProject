@@ -30,6 +30,21 @@ if (min > 9) {
 }
 currentTime.innerHTML = hour + ":" + min;
 
+function formatDay(timeCode){
+  let date = new Date(timeCode * 1000);
+  let days = [
+  "Sun",
+  "Mon",
+  "Tue",
+  "Wed",
+  "Thu",
+  "Fri",
+  "Sat"
+  ];
+  let day = days[date.getDay()];
+  return day;
+}
+
 function getForecast(response){
 let apiKey = "a1cc97bd036td82dc4266fcb58afc0of";
 let apiUrl= `https://api.shecodes.io/weather/v1/forecast?lon=${response.data.coordinates.longitude}&lat=${response.data.coordinates.latitude}&key=${apiKey}&units=metric`;
@@ -38,18 +53,19 @@ console.log(apiUrl);
 }
 
 function showDaysWeather (response) {
-  console.log(response.data.daily);
+  let forecast= response.data.daily;
   let daysWeather = document.querySelector("#daysWeather");
   let forecastHTML=`<div class="row">`;
 let days = ["Mon", "Tue", "Wed", "Thu","Fri", "Sat"];
-days.forEach(function (day) {
+forecast.forEach(function (forecastDay, index) {
+  if (index < 6) {
 forecastHTML = forecastHTML + `
               <div class="col-2">
-                ${day}
-                <img src="media/weather_1.jpg" alt="weatherIcon" width="64" />
-                <span class="max"> 10° </span> <span class="min"> 2° </span>
+                ${formatDay(forecastDay.time)}
+                <img src="${forecastDay.condition.icon_url}" alt="weatherIcon" width="64" />
+                <span class="max"> ${Math.round(forecastDay.temperature.maximum)}° </span> <span class="min"> ${Math.round(forecastDay.temperature.minimum)}° </span>
               </div>
-               `;
+               `;}
 })
   forecastHTML = forecastHTML + `</div>`;
   daysWeather.innerHTML = forecastHTML;
