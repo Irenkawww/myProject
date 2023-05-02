@@ -1,5 +1,6 @@
 body {
     font-family: arial, sans-serif;
+   
 }
 
 h1 {
@@ -24,22 +25,24 @@ li {
     line-height: 1;
     list-style: none;
 }
-.btn{
+
+.btn {
     font-size: xx-small;
 }
 .weather-app {
-    border: 1px solid #dadde1;
+    border: 1px solid #717171;
     padding: 15px;
     border-radius: 10px;
     padding-bottom: 0px;
-}
+    background-color: #b3f4f948;
+    }
 
 .weather-icon {
     height: 120px;
     width: 128px;
     margin-right: 10px;
-    border-radius: 20px;
-}
+    border-radius: 70px;
+   }
 
 .temperature {
     color: rgb(33, 33, 33);
@@ -55,21 +58,26 @@ li {
 
 .search-form {
     margin-bottom: 20px;
-}
+    }
 .btn-success {
     color: #070101;
-    background-color: #ffd21d;
-    border-color: #ffd21d;
+    background-color: #f5f98b;
+    border-color: #0c0c09;
 }
 .btn-success:hover {
-    color: #fff;
-    background-color: #1930e0;
-    border-color: #1930e0;
+    color: #060606;
+    background-color: #3ca7f9;
+    border-color: #3ca7f9;
+}
+.btn-primary {
+    color: #070101;
+    background-color: #f5f98b;
+    border-color: #0c0c09;
 }
 .btn-primary:hover {
-    color: #fff;
-    background-color: #1930e0;
-    border-color: #1930e0;
+    color: #060606;
+    background-color: #3ca7f9;
+    border-color: #3ca7f9;
 }
 .gitHubLink {
     margin: 20px auto;
